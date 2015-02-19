@@ -10,7 +10,7 @@ class ccgsimplecobbler () inherits ccgsimplecobbler::params {
 
 
     file {'/opt/cobbler/systemsetup.py':
-        content => template('/systemsetup.py'),
+        content => template('ccgsimplecobbler/systemsetup.py.erb'),
         ensure => present,
         owner => 'root',
         group => 'root',
@@ -18,7 +18,7 @@ class ccgsimplecobbler () inherits ccgsimplecobbler::params {
     }
 
     file {'/etc/cobbler/dhcp.template':
-        content => template('/cobbler/dhcp.template'),
+        content => template('ccgsimplecobbler/cobbler/dhcp.template.erb'),
         ensure => present,
         owner => 'root',
         group => 'root',
@@ -26,7 +26,7 @@ class ccgsimplecobbler () inherits ccgsimplecobbler::params {
     }
 
     file {'/etc/cobbler/zone.template':
-        content => template('/cobbler/zone.template'),
+        content => template('ccgsimplecobbler/cobbler/zone.template.erb'),
         ensure => present,
         owner => 'root',
         group => 'root',
@@ -34,43 +34,43 @@ class ccgsimplecobbler () inherits ccgsimplecobbler::params {
     }
 
     # preseeds
-    file {'/etc/cobbler/ccgcloud.preseed':
-        content => template('/cobbler/ccgcloud.preseed'),
+    file {'/etc/cobbler/ccgcloud.preseed.erb':
+        content => template('ccgsimplecobbler/cobbler/ccgcloud.preseed.erb'),
         ensure => present,
         owner => 'root',
         group => 'root',
         mode => 0644,
     }
     file {'/etc/cobbler/ccgswift.preseed':
-        content => template('/cobbler/ccgswift.preseed'),
+        content => template('ccgsimplecobbler/cobbler/ccgswift.preseed.erb'),
         ensure => present,
         owner => 'root',
         group => 'root',
         mode => 0644,
     }
     file {'/etc/cobbler/ceph.preseed':
-        content => template('/cobbler/ceph.preseed'),
+        content => template('ccgsimplecobbler/cobbler/ceph.preseed.erb'),
         ensure => present,
         owner => 'root',
         group => 'root',
         mode => 0644,
     }
     file {'/etc/cobbler/compute.preseed':
-        content => template('/cobbler/compute.preseed'),
+        content => template('ccgsimplecobbler/cobbler/compute.preseed.erb'),
         ensure => present,
         owner => 'root',
         group => 'root',
         mode => 0644,
     }
     file {'/etc/cobbler/controller.preseed':
-        content => template('/cobbler/controller.preseed'),
+        content => template('ccgsimplecobbler/cobbler/controller.preseed.erb'),
         ensure => present,
         owner => 'root',
         group => 'root',
         mode => 0644,
     }
     file {'/etc/cobbler/ubuntu-server.preseed':
-        content => template('/cobbler/ubuntu-server.preseed'),
+        content => template('ccgsimplecobbler/cobbler/ubuntu-server.preseed.erb'),
         ensure => present,
         owner => 'root',
         group => 'root',
