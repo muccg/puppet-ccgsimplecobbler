@@ -1,0 +1,20 @@
+\$TTL 300
+@                       IN      SOA     $cobbler_server. bpa.ccg. (
+                                        $serial      ; Serial
+                                        600          ; Refresh
+                                        1800         ; Retry
+                                        604800       ; Expire
+                                        300          ; TTL
+                                        )
+
+                        IN      NS      $cobbler_server.
+
+puppetmaster            IN      A       $cobbler_server;
+nectar                  IN      A       $cobbler_server;
+bpamirror		IN      A       $cobbler_server;
+
+rabbitmq     		IN      A       10.0.0.80
+                        IN      A       10.0.0.81
+
+
+$host_record
