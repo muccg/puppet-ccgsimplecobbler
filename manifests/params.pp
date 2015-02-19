@@ -7,6 +7,7 @@ class ccgsimplecobbler::params {
       'cobbler',
       'cobbler-common',
       'cobbler-web',
-      'python-cobbler'
+      'python-cobbler',
+      'wget'
     ]
 }
