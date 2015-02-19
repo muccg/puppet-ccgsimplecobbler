@@ -9,7 +9,13 @@ class ccgsimplecobbler () inherits ccgsimplecobbler::params {
     }
 
 
-    file {'/opt/cobbler/systemsetup.py':
+    file { "/ccgcobbler":
+        ensure => "directory",
+        owner  => "root",
+        group  => "root",
+        mode   => 750,
+    } ->
+    file {'/ccgcobbler/systemsetup.py':
         content => template('ccgsimplecobbler/systemsetup.py.erb'),
         ensure => present,
         owner => 'root',
