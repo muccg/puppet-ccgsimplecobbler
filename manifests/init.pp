@@ -1,6 +1,7 @@
+#
 class ccgsimplecobbler () inherits ccgsimplecobbler::params {
   
-    package { $ccgcloud::absent_packages:
+    package { $ccgsimplecobbler::absent_packages:
         ensure  => absent,
     }
 
