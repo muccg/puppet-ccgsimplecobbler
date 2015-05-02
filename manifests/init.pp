@@ -1,6 +1,6 @@
 #
 class ccgsimplecobbler () inherits ccgsimplecobbler::params {
-  
+
     package { $ccgsimplecobbler::absent_packages:
         ensure  => absent,
     }
@@ -16,6 +16,7 @@ class ccgsimplecobbler () inherits ccgsimplecobbler::params {
         group  => "root",
         mode   => 750,
     } ->
+
     file {'/ccgcobbler/systemsetup.py':
         content => template('ccgsimplecobbler/systemsetup.py.erb'),
         ensure => present,
@@ -48,6 +49,7 @@ class ccgsimplecobbler () inherits ccgsimplecobbler::params {
         group => 'root',
         mode => 0644,
     }
+
     file {'/etc/cobbler/ccgswift.preseed':
         content => template('ccgsimplecobbler/cobbler/ccgswift.preseed.erb'),
         ensure => present,
@@ -55,6 +57,7 @@ class ccgsimplecobbler () inherits ccgsimplecobbler::params {
         group => 'root',
         mode => 0644,
     }
+
     file {'/etc/cobbler/ceph.preseed':
         content => template('ccgsimplecobbler/cobbler/ceph.preseed.erb'),
         ensure => present,
@@ -62,6 +65,7 @@ class ccgsimplecobbler () inherits ccgsimplecobbler::params {
         group => 'root',
         mode => 0644,
     }
+
     file {'/etc/cobbler/compute.preseed':
         content => template('ccgsimplecobbler/cobbler/compute.preseed.erb'),
         ensure => present,
@@ -69,6 +73,7 @@ class ccgsimplecobbler () inherits ccgsimplecobbler::params {
         group => 'root',
         mode => 0644,
     }
+
     file {'/etc/cobbler/controller.preseed':
         content => template('ccgsimplecobbler/cobbler/controller.preseed.erb'),
         ensure => present,
@@ -76,6 +81,7 @@ class ccgsimplecobbler () inherits ccgsimplecobbler::params {
         group => 'root',
         mode => 0644,
     }
+
     file {'/etc/cobbler/ubuntu-server.preseed':
         content => template('ccgsimplecobbler/cobbler/ubuntu-server.preseed.erb'),
         ensure => present,
